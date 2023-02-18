@@ -48,10 +48,15 @@ function draw() {
     );
     const rectColour = ((((i / numRects) * time) / 80) * goldenRatio) % 360;
     const sizeMultiplier =
-      Math.abs(bias * (((time / 10000) * goldenRatio) % 2) - 1) +
       ((i / numRects) * Math.min(canvas.height, canvas.width)) / 1000;
-    const width = rectSize / 2 + rectSize * sizeMultiplier * fallPercent;
-    const height = rectSize / 2 + rectSize * sizeMultiplier * fallPercent;
+    const timeMultiplier = Math.abs(
+      bias * (((time / 10000) * goldenRatio) % 2) - 1
+    );
+    const width =
+      rectSize / 2 + rectSize * fallPercent * timeMultiplier * sizeMultiplier;
+    const height =
+      rectSize / 2 +
+      rectSize * fallPercent * (1 - timeMultiplier) * sizeMultiplier;
     ctx.fillStyle = `hsl(${rectColour}, 100%, 60%)`;
     ctx.fillRect(rectPos.x - width / 2, rectPos.y - height / 2, width, height);
   }
