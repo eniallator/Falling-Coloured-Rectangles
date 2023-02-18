@@ -1,6 +1,3 @@
-ctx.fillStyle = "black";
-ctx.strokeStyle = "white";
-
 let gradient, center;
 const goldenRatio = (1 + Math.sqrt(5)) / 2;
 
@@ -12,9 +9,8 @@ function draw() {
   const lineRotSpeed = paramConfig.getVal("line-rotation-speed");
   const time = Date.now();
 
-  ctx.fillStyle = "white";
   ctx.strokeStyle = "white";
-  ctx.lineWidth = "10px";
+  ctx.lineWidth = 2;
   for (let i = 0; i < numLines; i++) {
     ctx.beginPath();
     ctx.moveTo(center.x, center.y);
