@@ -39,16 +39,17 @@ function draw() {
     const bias = 0.5 + (((i + 1) * goldenRatio) % 1);
     const sign = 2 * (i % 2) - 1;
     const angle = (i / numRects) * 2 * Math.PI;
-    const fallPercent = 1 - ((sign * bias * rectFallSpeed * time) % 1);
+    const fallPercent = 1 - ((bias * rectFallSpeed * time) % 1);
     const rectPos = center.copy().add(
       center
         .copy()
         .setAngle(sign * bias * rectRotSpeed * time + angle)
         .setMagnitude(fallPercent * maxMagnitude)
     );
-    const rectColour = ((((i / numRects) * time) / 80) * goldenRatio) % 360;
+    const rectColour =
+      (((((i + 1) / numRects) * time) / 80) * goldenRatio) % 360;
     const sizeMultiplier =
-      ((i / numRects) * Math.min(canvas.height, canvas.width)) / 1000;
+      (((i + 1) / numRects) * Math.min(canvas.height, canvas.width)) / 1000;
     const timeMultiplier = Math.abs(
       bias * (((time / 10000) * goldenRatio) % 2) - 1
     );
