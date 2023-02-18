@@ -53,11 +53,13 @@ function draw() {
     const timeMultiplier = Math.abs(
       bias * (((time / 10000) * goldenRatio) % 2) - 1
     );
+    const fallMultiplier = Math.pow(fallPercent, 1 / 3);
     const width =
-      rectSize / 2 + rectSize * fallPercent * timeMultiplier * sizeMultiplier;
+      fallMultiplier *
+      (rectSize / 2 + rectSize * timeMultiplier * sizeMultiplier);
     const height =
-      rectSize / 2 +
-      rectSize * fallPercent * (1 - timeMultiplier) * sizeMultiplier;
+      fallMultiplier *
+      (rectSize / 2 + rectSize * (1 - timeMultiplier) * sizeMultiplier);
     ctx.fillStyle = `hsl(${rectColour}, 100%, 60%)`;
     ctx.fillRect(rectPos.x - width / 2, rectPos.y - height / 2, width, height);
   }

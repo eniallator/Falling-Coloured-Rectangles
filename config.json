@@ -44,18 +44,18 @@
         "id": "rect-fall-speed",
         "label": "Rectangle Fall Speed",
         "type": "range",
-        "default": 0.0002,
+        "default": 0.0001,
         "attrs": {
-            "min": 0.0001,
-            "max": 2,
-            "step": 0.001
+            "min": 0.00001,
+            "max": 0.0005,
+            "step": 0.00005
         }
     },
     {
         "id": "rect-rotation-speed",
         "label": "Rectangle Rotation Speed",
         "type": "range",
-        "default": 0.0002,
+        "default": 0.00015,
         "attrs": {
             "min": 0,
             "max": 0.0005,
