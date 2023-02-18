@@ -1,82 +1,93 @@
 [
     {
-        "id": "example-checkbox",
-        "label": "Example Checkbox",
-        "type": "checkbox",
-        "tooltip": "Example tooltip",
-        "default": true
-    },
-    {
-        "id": "example-range",
-        "label": "Example Range",
-        "type": "range",
-        "default": 5,
-        "attrs": {
-            "min": 1,
-            "max": 10,
-            "step": 0.5
-        }
-    },
-    {
-        "id": "example-number",
-        "label": "Example Number",
+        "id": "num-lines",
+        "label": "Number of center lines",
         "type": "number",
-        "default": 5,
+        "default": 20,
         "attrs": {
-            "min": 1,
-            "max": 10
+            "min": 0,
+            "max": 100
         }
     },
     {
-        "id": "example-colour",
-        "label": "Example Colour",
-        "type": "color",
-        "default": "FF5A5F"
-    },
-    {
-        "id": "example-button",
-        "text": "Example Button",
-        "type": "button"
-    },
-    {
-        "id": "example-text",
-        "label": "Example Text",
-        "type": "text",
-        "default": "Hello",
+        "id": "line-rotation-speed",
+        "label": "Line Rotation Speed",
+        "type": "range",
+        "default": 0.0001,
         "attrs": {
-            "placeholder": "World!"
+            "min": 0,
+            "max": 0.0005,
+            "step": 0.00001
         }
     },
     {
-        "id": "example-collection",
-        "label": "Example Collection",
+        "id": "num-rects",
+        "label": "Number of Coloured Rectangles",
+        "type": "number",
+        "default": 10,
+        "attrs": {
+            "min": 0,
+            "max": 30
+        }
+    },
+    {
+        "id": "rect-size",
+        "label": "Rectangle size",
+        "type": "number",
+        "default": 60,
+        "attrs": {
+            "min": 10,
+            "max": 250
+        }
+    },
+    {
+        "id": "rect-fall-speed",
+        "label": "Rectangle Fall Speed",
+        "type": "range",
+        "default": 0.0002,
+        "attrs": {
+            "min": 0.0001,
+            "max": 2,
+            "step": 0.001
+        }
+    },
+    {
+        "id": "rect-rotation-speed",
+        "label": "Rectangle Rotation Speed",
+        "type": "range",
+        "default": 0.0002,
+        "attrs": {
+            "min": 0,
+            "max": 0.0005,
+            "step": 0.00001
+        }
+    },
+    {
+        "id": "gradient-colours",
+        "label": "Gradient Colours",
         "type": "collection",
         "expandable": true,
         "fields": [
             {
-                "label": "Example Range Field",
-                "type": "range",
-                "initial": 2,
-                "attrs": {
-                    "min": 0,
-                    "max": 4,
-                    "step": 1
-                }
-            },
-            {
-                "label": "Example Checkbox Field",
-                "type": "checkbox",
-                "initial": false
+                "label": "Colour",
+                "type": "color"
             }
         ],
         "default": [
             [
-                4,
-                true
+                "A4CEE5"
             ],
             [
-                1,
-                false
+                "2F97DF"
+            ],
+            [
+                "3073A1"
+            ],
+            [
+                "384A56"
+            ],
+            [
+                "30302D"
             ]
         ]
     }
