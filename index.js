@@ -47,7 +47,7 @@ function draw() {
     const sizeMultiplier =
       (((i + 1) / numRects) * Math.min(canvas.height, canvas.width)) / 1000;
     const timeMultiplier = Math.abs(
-      bias * (((time / 10000) * goldenRatio) % 2) - 1
+      ((bias * ((time / 10000) * goldenRatio)) % 2) - 1
     );
     const fallMultiplier = Math.pow(fallPercent, 1 / 3);
     const width =
