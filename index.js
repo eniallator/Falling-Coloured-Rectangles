@@ -48,7 +48,7 @@ function draw() {
     );
     const rectColour = ((((i / numRects) * time) / 80) * goldenRatio) % 360;
     const sizeMultiplier =
-      bias * (((time / 10000) * goldenRatio) % 1) +
+      Math.abs(bias * (((time / 10000) * goldenRatio) % 2) - 1) +
       ((i / numRects) * Math.min(canvas.height, canvas.width)) / 1000;
     const width = rectSize / 2 + rectSize * sizeMultiplier * fallPercent;
     const height = rectSize / 2 + rectSize * sizeMultiplier * fallPercent;
